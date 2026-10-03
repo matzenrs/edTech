@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll-a-Buddy</title>
+    <meta name="description" content="Roll 10 dice to build a 3D cartoon person, and peek under the hood to learn how websites really work." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="top">
+      <h1><span class="logo-die">🎲</span> Roll-a-Buddy</h1>
+      <p>Roll 10 dice. Meet a brand-new person. <b>Learn how the magic works!</b></p>
+    </header>
+
+    <main class="layout">
+      <section class="stage-card" aria-label="Your 3D person">
+        <div id="stage"></div>
+        <p class="stage-hint">👆 Drag to spin · scroll or pinch to zoom</p>
+      </section>
+
+      <section class="panel">
+        <nav id="progress" class="progress" aria-label="Your 10 rolls"></nav>
+
+        <div id="roll-card" class="card roll-card">
+          <h2 id="roll-title"></h2>
+          <p id="roll-hint" class="hint"></p>
+          <div id="dice" class="dice"></div>
+          <p id="result" class="result-line" aria-live="polite"></p>
+          <div class="btnrow">
+            <button id="roll-btn" class="btn big">🎲 Roll!</button>
+            <button id="auto-btn" class="btn ghost" title="Roll everything that's left, fast">⚡ Roll the rest</button>
+          </div>
+        </div>
+
+        <div id="finale" class="card finale" hidden>
+          <small>🎉 Say hello to…</small>
+          <h2 id="meet-name"></h2>
+          <ul id="traits" class="traits"></ul>
+          <div class="btnrow">
+            <button id="save-btn" class="btn">💾 Save to gallery</button>
+            <button id="share-btn" class="btn">🔗 Copy share link</button>
+            <button id="twin-btn" class="btn">👯 Hunt for twins</button>
+            <button id="new-btn" class="btn ghost">🎲 Roll a new person</button>
+          </div>
+        </div>
+
+        <article id="lesson" class="card lesson" aria-live="polite"></article>
+      </section>
+    </main>
+
+    <section class="bottom">
+      <div class="card log">
+        <h2>🛰️ Behind-the-Scenes Log</h2>
+        <p class="hint">Everything the code really does, as it happens. Newest on top.</p>
+        <ol id="log-list"></ol>
+      </div>
+      <div class="card gallery">
+        <h2>🖼️ Your Gallery</h2>
+        <p id="gallery-empty" class="hint">Nobody here yet! Finish a person and press <b>Save</b>.</p>
+        <ul id="gallery-list"></ul>
+      </div>
+    </section>
+
+    <section id="hosting" class="card hosting"></section>
+
+    <footer>Made with 🎲, Three.js, and curiosity. Everything runs right here in your browser.</footer>
+    <div id="toast" class="toast" role="status"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
