@@ -60,5 +60,13 @@ src/
 
 ## Deploying
 
+### Render (static site)
+
+`render.yaml` is a Render Blueprint. In Render, click **New → Blueprint**, pick this repo, and press **Apply**.
+Render runs `npm ci && npm test && npm run build` and serves `dist/`. It redeploys on every push to the selected branch.
+(Or use **New → Static Site** by hand: build command `npm ci && npm run build`, publish directory `dist`.)
+
+### GitHub Pages
+
 `.github/workflows/deploy.yml` tests, builds, and publishes to GitHub Pages on every push to `main`.
 One-time setup: in the repo go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
