@@ -24,7 +24,7 @@ After the person is finished:
   *without* the worker and watch the animation freeze, which shows why workers exist.
 - **💾 Save to gallery**: `localStorage`, showing how many bytes are used.
 - **🔗 Share link**: the whole person is packed into the URL (`?p=…`), and the lesson labels each part of the URL.
-- **🚀 How did this website get to you?**: build → GitHub Actions → GitHub Pages → HTTPS → your browser.
+- **🚀 How did this website get to you?**: GitHub → Render webhook → build (tests + Vite) → CDN → HTTPS → your browser.
 
 A **Behind-the-Scenes Log** prints every real event as it happens: random numbers, rebuilds, network requests, worker messages, and storage writes.
 
@@ -58,15 +58,8 @@ src/
     twinWorker.js   the Web Worker wrapper
 ```
 
-## Deploying
-
-### Render (static site)
+## Deploying to Render
 
 `render.yaml` is a Render Blueprint. In Render, click **New → Blueprint**, pick this repo, and press **Apply**.
 Render runs `npm ci && npm test && npm run build` and serves `dist/`. It redeploys on every push to the selected branch.
 (Or use **New → Static Site** by hand: build command `npm ci && npm run build`, publish directory `dist`.)
-
-### GitHub Pages
-
-`.github/workflows/deploy.yml` tests, builds, and publishes to GitHub Pages on every push to `main`.
-One-time setup: in the repo go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.

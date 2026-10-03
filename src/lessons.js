@@ -439,8 +439,9 @@ await navigator.clipboard.writeText(url);  // copy to your clipboard`)}`;
       <ol class="journey">
         <li><b>✍️ Written:</b> A person (with an AI helper!) wrote the code in files on a computer.</li>
         <li><b>🗂️ Saved in GitHub:</b> The files live on <b>GitHub</b>, a website that keeps every version of code, like an undo history for the whole project.</li>
-        <li><b>🤖 Built by a robot:</b> Every time the code changes, a <b>GitHub Action</b> (a robot that follows a checklist) runs a tool called <b>Vite</b>. Vite squishes all our code into a few small, fast files. This is called a <b>build</b>.</li>
-        <li><b>🌐 Hosted:</b> The built files go to <b>GitHub Pages</b>, computers that are always on and hand out web pages to anyone who asks. These are called <b>servers</b>.</li>
+        <li><b>🔔 Render gets a ping:</b> Every time the code changes, GitHub sends a message to a hosting company called <b>Render</b>: "Hey, there's new code!" (A message like that is called a <b>webhook</b>.)</li>
+        <li><b>🤖 Built by a robot:</b> Render's computers follow a checklist we wrote in a file called <code>render.yaml</code>: download the code, run the tests to make sure nothing broke, then run a tool called <b>Vite</b>. Vite squishes all our code into a few small, fast files. This is called a <b>build</b>.</li>
+        <li><b>🌐 Hosted:</b> Render copies the built files to <b>servers</b>, computers that are always on and hand out web pages to anyone who asks. Copies are kept in places all over the world (a <b>CDN</b>), so the site loads fast whether you live in Ohio or Japan.</li>
         <li><b>📬 Delivered:</b> When you typed the address, your browser asked the server for the files, and they traveled to you over the internet, scrambled with <b>HTTPS</b> so nobody could change them on the way.</li>
         <li><b>🧠 Run:</b> Your browser read the HTML, put on the CSS, and started the JavaScript. Everything since then (dice, 3D, saving) happened <b>on your device</b>!</li>
       </ol>
